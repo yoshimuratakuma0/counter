@@ -2,12 +2,12 @@ package com.example.countup.di
 
 import com.example.data.repositories.InMemoryCounterRepositoryImpl
 import com.example.domain.repositories.CounterRepository
+import com.example.domain.usecases.FetchCounterUseCase
 import com.example.domain.usecases.IncrementCountUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.Dispatchers
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -24,7 +24,15 @@ object AppModule {
         repository: CounterRepository,
     ): IncrementCountUseCase {
         return IncrementCountUseCase(
-            dispatcher = Dispatchers.IO,
+            repository = repository,
+        )
+    }
+
+    @Provides
+    fun provideFetchCounterUseCase(
+        repository: CounterRepository,
+    ): FetchCounterUseCase {
+        return FetchCounterUseCase(
             repository = repository,
         )
     }

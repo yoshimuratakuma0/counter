@@ -1,6 +1,8 @@
 package com.example.domain.repositories
 
+import kotlinx.coroutines.flow.StateFlow
+
 interface CounterRepository {
-    suspend fun getCount(): Int
-    suspend fun saveCount(count: Int)
+    fun fetchCounter(): StateFlow<Int>
+    fun saveCount(count: Int)
 }
