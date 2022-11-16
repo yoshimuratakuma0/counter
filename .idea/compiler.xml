@@ -4,6 +4,7 @@
     <bytecodeTargetLevel target="1.7">
       <module name="CountUp.app" target="11" />
       <module name="CountUp.data" target="11" />
+      <module name="CountUp.presentation" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
