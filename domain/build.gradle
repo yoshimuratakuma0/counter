@@ -7,3 +7,10 @@ java {
     sourceCompatibility = JavaVersion.VERSION_1_7
     targetCompatibility = JavaVersion.VERSION_1_7
 }
+
+dependencies {
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version")
+    testApi("org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlin_coroutine_version")
+    testApi("junit:junit:$junit_version")
+    testApi("io.mockk:mockk:$mockk_version")
+}
