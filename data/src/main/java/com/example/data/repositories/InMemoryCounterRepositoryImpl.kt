@@ -15,7 +15,7 @@ class InMemoryCounterRepositoryImpl : CounterRepository {
 
     override fun saveCount(count: Int) {
         _counter.update {
-            _counter.value + 1
+            count
         }
     }
 }

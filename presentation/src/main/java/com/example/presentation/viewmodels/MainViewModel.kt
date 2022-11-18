@@ -14,6 +14,7 @@ class MainViewModel @Inject constructor(
     val counter = fetchCounterUseCase(Unit)
 
     fun onClickIncrementer() {
-        incrementCountUseCase.execute(counter.value)
+        val currentCount = counter.value
+        incrementCountUseCase.execute(currentCount)
     }
 }
